@@ -10,6 +10,8 @@ In this directory, you'll find three important items.
 2. `server` - contains all the server-side code.
 3. `snowdrop.proto` - contains the API definitions.
 
+These are important as they are the only files that are written by the user. All other files are generated using certain tools.
+
 It's also important to keep in mind that we are using two technologies here: Protocol Buffers and gRPC.
 
 Protocol Buffers are ways of storing data compactly. While, gRPC uses these compact messages to send them over the web by using [RPCs](https://en.wikipedia.org/wiki/Remote_procedure_call).
