@@ -1,14 +1,37 @@
-syntax = "proto3";
+// The first thing in a .proto file
+// is to define which version of the proto spec we're using.
+// Surprisingly, proto3 is simpler than proto2.
 
+syntax = "proto3"; // Note the ';' at the end.
+
+// Like in java and go, proto files are split into
+// packages.
+// Think of this as the top level module that
+// you'll import into your code.
 package snowdrop;
 
+// Like with all client-server interactions we have
+// request and respones.
+// protocol buffers abstract this away and just call them `message`.
+// Here we are defining a message called `EchoRequest`
 message EchoRequest {
   string Body = 1;
+  // Since protocol buffers are in binary, we store their data
+  // types as well.
+  // We also give them a tag number. This is helpful for the compiler so
+  // try to avoid chainging these as much as possible.
   uint32 IDNumber = 2;
 }
 
 message EchoResponse { string Body = 1; }
 
+// Now this is where gRPC comes in.
+// all that we've seen sor far was just protocol buffers.
+
+// gRPC defines services in this case Echo.
 service Echo {
+  // In this service we expose an RPC called EchoMe
+  // it takes in an EchoRequest and returns an EchoResponse
+  // dont ask me about the `{}` bc idk :(
   rpc EchoMe(EchoRequest) returns (EchoResponse) {}
 }
