@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snowdrop;
+
+message EchoRequest {
+  string Body = 1;
+  uint32 IDNumber = 2;
+}
+
+message EchoResponse { string Body = 1; }
+
+service Echo {
+  rpc EchoMe(EchoRequest) returns (EchoResponse) {}
+}
