@@ -1,5 +1,7 @@
 # Snowdrop
 
+![](https://user-images.githubusercontent.com/13544676/78465541-cf711000-76ab-11ea-8322-60a9aecce1ae.png)
+
 Snowdrop is a simple echo service meant to demo the basic uses of gRPC.
 
 ## Protocol Buffers
